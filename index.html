@@ -1,514 +1,503 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
 
-    <!--  ----------------------------------------------------------------------  -->
-    <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-    <!--  If necessary, please modify the charset parameter to specify the        -->
-    <!--  character set of your HTML page.                                        -->
-    <!--  ----------------------------------------------------------------------  -->
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
 
-    <!--  ----------------------------------------------------------------------  -->
-    <!--  NOTE: Please add the following <FORM> element to your page.             -->
-    <!--  ----------------------------------------------------------------------  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tenor+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      .myForm {
-        background-color: #ffffff;
-        padding: 50px;
-        font-family: Roboto, sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #363a4c;
-      }
+<style>
+  .myForm {
+    background-color: #ffffff;
+    padding: 50px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #363a4c;
+  }
 
-      .textContainer {
-        margin: 5px;
-        padding: 10px;
-        font-weight: 500;
-        font-style: normal;
-        color: #363a4c;
-      }
+  .textContainer {
+    margin: 5px;
+    padding: 10px;
+    font-weight: 500;
+    font-style: normal;
+    color: #363a4c;
+  }
 
-      .myLabel,
-      .selectTitle {
-        font-weight: 600;
-        font-style: normal;
-        margin: 0px 0px 5px 0px;
-      }
+  .myLabel,
+  .selectTitle {
+    font-weight: 600;
+    font-style: normal;
+    margin: 0px 0px 5px 0px;
+  }
 
-      .myDivInput {
-        width: 100%;
-      }
+  .myDivInput {
+    width: 100%;
+  }
 
-      .myInput {
-        background-color: #efeff3;
-        appearance: none;
-        border-radius: 25px;
-        outline: none;
-        border: none;
-        padding: 15px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+  .myInput {
+    background-color: #efeff3;
+    appearance: none;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-      .myInput:hover,
-      .myDivSelect:hover,
-      .mySelect:hover {
-        background-color: #eef7f8;
-        border-color: #efeff3;
-        border: 0.5px;
-      }
+  .myInput:hover,
+  .myDivSelect:hover,
+  .mySelect:hover {
+    background-color: #eef7f8;
+    border-color: #efeff3;
+    border: 0.5px;
+  }
 
-      .myDivSelect {
-        background-color: #efeff3;
-        border-radius: 25px;
-        margin: 5px 0px 25px 0px;
-        padding: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+  .myDivSelect {
+    background-color: #efeff3;
+    border-radius: 25px;
+    margin: 5px 0px 25px 0px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-      .mySelect {
-        width: 90%;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-      }
+  .mySelect {
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
 
-      .myMsn {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        padding: 20px;
-        z-index: 1000;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        font-weight: 500;
-        font-style: normal;
-      }
+  .myMsn {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    font-style: normal;
+  }
 
-      .btnClose {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        color: #888;
-        width: 10px;
-        height: 10px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        background-color: white;
-        padding: 2px 5px 12px 5px;
-        margin: 5px;
-        font-weight: 800;
-        font-style: normal;
-      }
+  .btnClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 2px 5px 12px 5px;
+    margin: 5px;
+    font-weight: 800;
+    font-style: normal;
+  }
 
-      .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-      .flex-item {
-        flex: 1 1 45%;
-        margin: 5px;
-        padding: 10px;
-      }
+  .flex-item {
+    flex: 1 1 45%;
+    margin: 5px;
+    padding: 10px;
+  }
 
-      .myItem {
-        margin: 5px;
-        padding: 10px;
-      }
+  .myItem {
+    margin: 5px;
+    padding: 10px;
+  }
 
-      .container {
-        width: 100%;
-      }
-      .myBtn {
-        width: 200px;
-        background-color: #71c4c2;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        border-radius: 25px;
-        margin: 5px 0px 25px 0px;
-        padding: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: medium;
-        font-weight: 700;
-        font-style: normal;
-        color: #ffffff;
-      }
+  .container {
+    width: 100%;
+  }
+  .myBtn {
+    width: 200px;
+    background-color: #71c4c2;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    margin: 5px 0px 25px 0px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-weight: 700;
+    font-style: normal;
+    color: #ffffff;
+  }
 
-      .myBtn:hover {
-        background-color: #363a4c;
-      }
-    </style>
-    <title>sf-form</title>
-  </head>
-  <body>
-    <form
-      action=""
-      method="POST"
-      style="
-        background-color: #ffffff;
-        padding: 50px;
-        font-family: Roboto, sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      "
-    >
-      <input type="hidden" name="oid" value="" />
-      <input type="hidden" name="retURL" value="https://www.page.rg/" />
+  .myBtn:hover {
+    background-color: #363a4c;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tenor+Sans&display=swap"
+  rel="stylesheet"
+/>
+<form
+  action=""
+  method="POST"
+  style="
+    background-color: #ffffff;
+    padding: 50px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  "
+>
+  <input type="hidden" name="oid" value="" />
+  <input type="hidden" name="retURL" value="https://www.page.rg/" />
 
-      <!--  ----------------------------------------------------------------------  -->
-      <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-      <!--  these lines if you wish to test in debug mode.                          -->
-      <!--  <input type="hidden" name="debug" value=1>                              -->
-      <!--  <input type="hidden" name="debugEmail"                                  -->
-      <!--  value="">                                    -->
-      <!--  ----------------------------------------------------------------------  -->
-      <div class="textContainer">
-        ¡Potenciá a tu organización!
-        <br /><br />Completá este breve formulario de Autodiagnóstico y descubre
-        cómo podés fortalecer tu trabajo. <br />Luego de llenarlo, obtendrás en
-        unos días un reporte a medida a tu correo, con un panorama macro de tus
-        oportunidades y áreas de mejora para impulsar la efectividad y el
-        impacto de tu organización. <br /><br />
-        Recuerda revisar tu carpeta de spam, ya que tu reporte puede haber
-        llegado a esta carpeta.
-        <br />En unos días lo recibirás para que te apoye en el proceso de
-        transformación para potenciar el impacto de tu organización.
-        <br /><br />Te invitamos a explorar nuestros recursos:
-        <a href="https://www.kubadili.org/recursos" target="_blank"
-          >https://www.kubadili.org/recursos</a
-        ><br /><br />
+  <!--  ----------------------------------------------------------------------  -->
+  <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+  <!--  these lines if you wish to test in debug mode.                          -->
+  <!--  <input type="hidden" name="debug" value=1>                              -->
+  <!--  <input type="hidden" name="debugEmail"                                  -->
+  <!--  value="">                                    -->
+  <!--  ----------------------------------------------------------------------  -->
+  <div class="textContainer">
+    ¡Potenciá a tu organización!
+    <br /><br />Completá este breve formulario de Autodiagnóstico y descubre
+    cómo podés fortalecer tu trabajo. <br />Luego de llenarlo, obtendrás en unos
+    días un reporte a medida a tu correo, con un panorama macro de tus
+    oportunidades y áreas de mejora para impulsar la efectividad y el impacto de
+    tu organización. <br /><br />
+    Recuerda revisar tu carpeta de spam, ya que tu reporte puede haber llegado a
+    esta carpeta.
+    <br />En unos días lo recibirás para que te apoye en el proceso de
+    transformación para potenciar el impacto de tu organización. <br /><br />Te
+    invitamos a explorar nuestros recursos:
+    <a href="https://www.kubadili.org/recursos" target="_blank"
+      >https://www.kubadili.org/recursos</a
+    ><br /><br />
+  </div>
+
+  <!--  ----------------------------------------------------------------------  -->
+  <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+  <!--  these lines if you wish to test in debug mode.                          -->
+  <!--  <input type="hidden" name="debug" value=1>                              -->
+  <!--  <input type="hidden" name="debugEmail"                                  -->
+  <!--  value="licnataliasaidman@gmail.com">                                    -->
+  <!--  ----------------------------------------------------------------------  -->
+
+  <div class="container">
+    <div class="myItem">
+      <div class="selectTitle">
+        1- Mi equipo y yo tenemos una planificación con prioridades claras
       </div>
-
-      <!--  ----------------------------------------------------------------------  -->
-      <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-      <!--  these lines if you wish to test in debug mode.                          -->
-      <!--  <input type="hidden" name="debug" value=1>                              -->
-      <!--  <input type="hidden" name="debugEmail"                                  -->
-      <!--  value="licnataliasaidman@gmail.com">                                    -->
-      <!--  ----------------------------------------------------------------------  -->
-
-      <div class="container">
-        <div class="myItem">
-          <div class="selectTitle">
-            1- Mi equipo y yo tenemos una planificación con prioridades claras
-          </div>
-          <div class="myDivSelect">
-            <select
-              class="mySelect"
-              id="00NUo000000"
-              name="00NUo000000"
-              title="Foco en un solo objetivo"
-              required
-            >
-              <option value="">Ninguno</option>
-              <option value="Nunca">Nunca</option>
-              <option value="Raramente">Raramente</option>
-              <option value="A veces">A veces</option>
-              <option value="Siempre">Siempre</option></select
-            ><br />
-          </div>
-        </div>
-        <div class="myItem">
-          <div class="selectTitle">
-            2- Mi equipo y yo estamos abiertos a cambios y reconsideramos
-            continuamente nuestras prácticas de trabajo y proyectos
-          </div>
-          <div class="myDivSelect">
-            <select
-              class="mySelect"
-              id="00NUo000000"
-              name="00NUo000000"
-              title="Abiertos a cambios"
-              required
-            >
-              <option value="">Ninguno</option>
-              <option value="Nunca">Nunca</option>
-              <option value="Raramente">Raramente</option>
-              <option value="A veces">A veces</option>
-              <option value="Siempre">Siempre</option></select
-            ><br />
-          </div>
-        </div>
-        <div class="myItem">
-          <div class="selectTitle">
-            3- Mi equipo y yo utilizamos medios de comunicación para compartir
-            el progreso de todos en el equipo
-          </div>
-          <div class="myDivSelect">
-            <select
-              class="mySelect"
-              id="00NUo000000"
-              name="00NUo000000"
-              title="Medios de comunicación eficientes"
-              required
-            >
-              <option value="">Ninguno</option>
-              <option value="Nunca">Nunca</option>
-              <option value="Raramente">Raramente</option>
-              <option value="A veces">A veces</option>
-              <option value="Siempre">Siempre</option></select
-            ><br />
-          </div>
-        </div>
-        <div class="myItem">
-          <div class="selectTitle">
-            4- Mi equipo y yo consultamos regularmente a nuestros públicos para
-            asegurarnos que nuestros proyectos satisfacen sus necesidades
-          </div>
-          <div class="myDivSelect">
-            <select
-              class="mySelect"
-              id="00NUo000000"
-              name="00NUo000000"
-              title="Consulta al publico satisfacer necesidad"
-              required
-            >
-              <option value="">Ninguno</option>
-              <option value="Nunca">Nunca</option>
-              <option value="Raramente">Raramente</option>
-              <option value="A veces">A veces</option>
-              <option value="Siempre">Siempre</option></select
-            ><br />
-          </div>
-        </div>
-        <div class="myItem">
-          <div class="selectTitle">
-            5- Tengo la confianza de expresarme en mi organización con libertad
-            y asertividad, sin temor a ser cuestionado/a por ello
-          </div>
-          <div class="myDivSelect">
-            <select
-              class="mySelect"
-              id="00NUo000000"
-              name="00NUo000000"
-              title="Confianza p/expresarse con libertad"
-              required
-            >
-              <option value="">Ninguno</option>
-              <option value="Nunca">Nunca</option>
-              <option value="Raramente">Raramente</option>
-              <option value="A veces">A veces</option>
-              <option value="Siempre">Siempre</option></select
-            ><br />
-          </div>
-        </div>
-        <div class="myItem">
-          <div class="selectTitle">
-            6- En mi organización todos conocemos y compartimos un propósito
-            definido que guía nuestras acciones
-          </div>
-          <div class="myDivSelect">
-            <select
-              class="mySelect"
-              id="00NUo000000"
-              name="00NUo000000"
-              title="Propósito conocido guía acciones"
-              required
-            >
-              <option value="">Ninguno</option>
-              <option value="Nunca">Nunca</option>
-              <option value="Raramente">Raramente</option>
-              <option value="A veces">A veces</option>
-              <option value="Siempre">Siempre</option></select
-            ><br />
-          </div>
-        </div>
-        <div class="myItem">
-          <div class="selectTitle">
-            7- Nuestra organización goza de estabilidad financiera gracias a la
-            diversificación de fondos que manejamos
-          </div>
-          <div class="myDivSelect">
-            <select
-              class="mySelect"
-              id="00NUo000000"
-              name="00NUo000000"
-              title="Estabilidad financiera"
-              required
-            >
-              <option value="">Ninguno</option>
-              <option value="Nunca">Nunca</option>
-              <option value="Raramente">Raramente</option>
-              <option value="A veces">A veces</option>
-              <option value="Siempre">Siempre</option></select
-            ><br />
-          </div>
-        </div>
+      <div class="myDivSelect">
+        <select
+          class="mySelect"
+          id="00NUo000000PbNl"
+          name="00NUo000000PbNl"
+          title="Foco en un solo objetivo"
+          required
+        >
+          <option value="">Ninguno</option>
+          <option value="Nunca">Nunca</option>
+          <option value="Raramente">Raramente</option>
+          <option value="A veces">A veces</option>
+          <option value="Siempre">Siempre</option></select
+        ><br />
       </div>
-
-      <div class="textContainer" style="margin: 25px 0px 45px 0px">
-        Queremos conocer un poco más acerca de la organización:
+    </div>
+    <div class="myItem">
+      <div class="selectTitle">
+        2- Mi equipo y yo estamos abiertos a cambios y reconsideramos
+        continuamente nuestras prácticas de trabajo y proyectos
       </div>
-
-      <div class="flex-container">
-        <div class="flex-item">
-          <div class="myLabel">
-            <label for="first_name">Nombre</label>
-          </div>
-          <div class="myDivInput">
-            <input
-              id="first_name"
-              maxlength="40"
-              name="first_name"
-              size="20"
-              type="text"
-              class="myInput"
-              required
-            /><br />
-          </div>
-        </div>
-        <div class="flex-item">
-          <div class="myLabel">
-            <label for="last_name">Apellido</label>
-          </div>
-          <div class="myDivInput">
-            <input
-              id="last_name"
-              maxlength="80"
-              name="last_name"
-              size="20"
-              type="text"
-              class="myInput"
-              required
-            /><br />
-          </div>
-        </div>
-        <div class="flex-item">
-          <div class="myLabel">
-            <label for="email">Correo electrónico de contacto</label>
-          </div>
-          <div class="myDivInput">
-            <input
-              id="email"
-              maxlength="80"
-              name="email"
-              size="20"
-              type="text"
-              class="myInput"
-              required
-            /><br />
-          </div>
-        </div>
-        <div class="flex-item">
-          <div class="myLabel">
-            <label for="company" class="myLabel"
-              >Nombre de la organización</label
-            >
-          </div>
-          <div class="myDivInput">
-            <input
-              id="company"
-              maxlength="40"
-              name="company"
-              size="20"
-              type="text"
-              class="myInput"
-              required
-            /><br />
-          </div>
-        </div>
-        <div class="flex-item">
-          <div class="myLabel">
-            <label for="industry" class="myLabel">Sector</label>
-          </div>
-          <div class="myDivSelect">
-            <select class="mySelect" id="industry" name="industry" required>
-              <option value="">Ninguno</option>
-              <option value="ONG">ONG</option>
-              <option value="Empresa Social">Empresa Social</option>
-              <option value="Empresa">Empresa</option>
-              <option value="Gobierno">Gobierno</option>
-              <option value="Donante">Donante</option>
-              <option value="Fondo">Fondo Filantrópico</option>
-              <option value="Actor multilateral">Actor multilateral</option>
-            </select>
-            <br />
-          </div>
-        </div>
-        <div class="flex-item">
-          <div class="selectTitle">Alcance de tu organización</div>
-          <div class="myDivSelect">
-            <select
-              class="mySelect"
-              id="00NHr00000Lt"
-              name="00NHr00000Lt"
-              title="Alcance"
-              required
-            >
-              <option value="">Ninguno</option>
-              <option value="Local">Local</option>
-              <option value="Nacional">Nacional</option>
-              <option value="Regional/Internacional">
-                Regional/Internacional
-              </option></select
-            ><br />
-          </div>
-        </div>
-        <div class="flex-item">
-          <div class="selectTitle">Tamaño de tu organización</div>
-          <div class="myDivSelect">
-            <select
-              class="mySelect"
-              id="00NHr00000Lu"
-              name="00NHr00000Lu"
-              title="N° de Empleados"
-              required
-            >
-              <option value="">Ninguno</option>
-              <option value="No sé">No sé</option>
-              <option value="Somos un equipo de voluntarios">
-                Somos un equipo de voluntarios
-              </option>
-              <option value="Menos de 10">Menos de 10</option>
-              <option value="Entre 10 y 25">Entre 10 y 25</option>
-              <option value="Entre 25 y 50">Entre 25 y 50</option>
-              <option value="Más de 50">Más de 50</option></select
-            ><br />
-          </div>
-        </div>
-        <div class="flex-item"></div>
+      <div class="myDivSelect">
+        <select
+          class="mySelect"
+          id="00NUo000000PbUD"
+          name="00NUo000000PbUD"
+          title="Abiertos a cambios"
+          required
+        >
+          <option value="">Ninguno</option>
+          <option value="Nunca">Nunca</option>
+          <option value="Raramente">Raramente</option>
+          <option value="A veces">A veces</option>
+          <option value="Siempre">Siempre</option></select
+        ><br />
       </div>
+    </div>
+    <div class="myItem">
+      <div class="selectTitle">
+        3- Mi equipo y yo utilizamos medios de comunicación para compartir el
+        progreso de todos en el equipo
+      </div>
+      <div class="myDivSelect">
+        <select
+          class="mySelect"
+          id="00NUo000000PbZ3"
+          name="00NUo000000PbZ3"
+          title="Medios de comunicación eficientes"
+          required
+        >
+          <option value="">Ninguno</option>
+          <option value="Nunca">Nunca</option>
+          <option value="Raramente">Raramente</option>
+          <option value="A veces">A veces</option>
+          <option value="Siempre">Siempre</option></select
+        ><br />
+      </div>
+    </div>
+    <div class="myItem">
+      <div class="selectTitle">
+        4- Mi equipo y yo consultamos regularmente a nuestros públicos para
+        asegurarnos que nuestros proyectos satisfacen sus necesidades
+      </div>
+      <div class="myDivSelect">
+        <select
+          class="mySelect"
+          id="00NUo000000Pbaf"
+          name="00NUo000000Pbaf"
+          title="Consulta al publico satisfacer necesidad"
+          required
+        >
+          <option value="">Ninguno</option>
+          <option value="Nunca">Nunca</option>
+          <option value="Raramente">Raramente</option>
+          <option value="A veces">A veces</option>
+          <option value="Siempre">Siempre</option></select
+        ><br />
+      </div>
+    </div>
+    <div class="myItem">
+      <div class="selectTitle">
+        5- Tengo la confianza de expresarme en mi organización con libertad y
+        asertividad, sin temor a ser cuestionado/a por ello
+      </div>
+      <div class="myDivSelect">
+        <select
+          class="mySelect"
+          id="00NUo000000PbcH"
+          name="00NUo000000PbcH"
+          title="Confianza p/expresarse con libertad"
+          required
+        >
+          <option value="">Ninguno</option>
+          <option value="Nunca">Nunca</option>
+          <option value="Raramente">Raramente</option>
+          <option value="A veces">A veces</option>
+          <option value="Siempre">Siempre</option></select
+        ><br />
+      </div>
+    </div>
+    <div class="myItem">
+      <div class="selectTitle">
+        6- En mi organización todos conocemos y compartimos un propósito
+        definido que guía nuestras acciones
+      </div>
+      <div class="myDivSelect">
+        <select
+          class="mySelect"
+          id="00NUo000000PbfV"
+          name="00NUo000000PbfV"
+          title="Propósito conocido guía acciones"
+          required
+        >
+          <option value="">Ninguno</option>
+          <option value="Nunca">Nunca</option>
+          <option value="Raramente">Raramente</option>
+          <option value="A veces">A veces</option>
+          <option value="Siempre">Siempre</option></select
+        ><br />
+      </div>
+    </div>
+    <div class="myItem">
+      <div class="selectTitle">
+        7- Nuestra organización goza de estabilidad financiera gracias a la
+        diversificación de fondos que manejamos
+      </div>
+      <div class="myDivSelect">
+        <select
+          class="mySelect"
+          id="00NUo000000Pbh7"
+          name="00NUo000000Pbh7"
+          title="Estabilidad financiera"
+          required
+        >
+          <option value="">Ninguno</option>
+          <option value="Nunca">Nunca</option>
+          <option value="Raramente">Raramente</option>
+          <option value="A veces">A veces</option>
+          <option value="Siempre">Siempre</option></select
+        ><br />
+      </div>
+    </div>
+  </div>
 
-      <div style="display: none">
-        <label for="lead_source">Lead Source</label
-        ><select id="lead_source" name="lead_source">
-          <option value="Contacto Web">Contacto Web</option>
+  <div class="textContainer" style="margin: 25px 0px 45px 0px">
+    Queremos conocer un poco más acerca de la organización:
+  </div>
+
+  <div class="flex-container">
+    <div class="flex-item">
+      <div class="myLabel">
+        <label for="first_name">Nombre</label>
+      </div>
+      <div class="myDivInput">
+        <input
+          id="first_name"
+          maxlength="40"
+          name="first_name"
+          size="20"
+          type="text"
+          class="myInput"
+          required
+        /><br />
+      </div>
+    </div>
+    <div class="flex-item">
+      <div class="myLabel">
+        <label for="last_name">Apellido</label>
+      </div>
+      <div class="myDivInput">
+        <input
+          id="last_name"
+          maxlength="80"
+          name="last_name"
+          size="20"
+          type="text"
+          class="myInput"
+          required
+        /><br />
+      </div>
+    </div>
+    <div class="flex-item">
+      <div class="myLabel">
+        <label for="email">Correo electrónico de contacto</label>
+      </div>
+      <div class="myDivInput">
+        <input
+          id="email"
+          maxlength="80"
+          name="email"
+          size="20"
+          type="text"
+          class="myInput"
+          required
+        /><br />
+      </div>
+    </div>
+    <div class="flex-item">
+      <div class="myLabel">
+        <label for="company" class="myLabel">Nombre de la organización</label>
+      </div>
+      <div class="myDivInput">
+        <input
+          id="company"
+          maxlength="40"
+          name="company"
+          size="20"
+          type="text"
+          class="myInput"
+          required
+        /><br />
+      </div>
+    </div>
+    <div class="flex-item">
+      <div class="myLabel">
+        <label for="industry" class="myLabel">Sector</label>
+      </div>
+      <div class="myDivSelect">
+        <select class="mySelect" id="industry" name="industry" required>
+          <option value="">Ninguno</option>
+          <option value="ONG">ONG</option>
+          <option value="Empresa Social">Empresa Social</option>
+          <option value="Empresa">Empresa</option>
+          <option value="Gobierno">Gobierno</option>
+          <option value="Donante">Donante</option>
+          <option value="Fondo">Fondo Filantrópico</option>
+          <option value="Actor multilateral">Actor multilateral</option>
         </select>
+        <br />
       </div>
-      <div class="flex-item">
-        <input type="submit" name="submit" class="myBtn" />
+    </div>
+    <div class="flex-item">
+      <div class="selectTitle">Alcance de tu organización</div>
+      <div class="myDivSelect">
+        <select
+          class="mySelect"
+          id="00NHr00000LtZJA"
+          name="00NHr00000LtZJA"
+          title="Alcance"
+          required
+        >
+          <option value="">Ninguno</option>
+          <option value="Local">Local</option>
+          <option value="Nacional">Nacional</option>
+          <option value="Regional/Internacional">
+            Regional/Internacional
+          </option></select
+        ><br />
       </div>
-    </form>
-    <script>
-      document.querySelector(".myForm").addEventListener("submit", function () {
-        //event.preventDefault(); // Prevenir el envío del formulario
+    </div>
+    <div class="flex-item">
+      <div class="selectTitle">Tamaño de tu organización</div>
+      <div class="myDivSelect">
+        <select
+          class="mySelect"
+          id="00NHr00000LujPP"
+          name="00NHr00000LujPP"
+          title="N° de Empleados"
+          required
+        >
+          <option value="">Ninguno</option>
+          <option value="No sé">No sé</option>
+          <option value="Somos un equipo de voluntarios">
+            Somos un equipo de voluntarios
+          </option>
+          <option value="Menos de 10">Menos de 10</option>
+          <option value="Entre 10 y 25">Entre 10 y 25</option>
+          <option value="Entre 25 y 50">Entre 25 y 50</option>
+          <option value="Más de 50">Más de 50</option></select
+        ><br />
+      </div>
+    </div>
+    <div class="flex-item"></div>
+  </div>
 
-        alert(
-          `¡Gracias por completar el formulario! En breve una colaborador de nuestro equipo se estará comunicando via mail`
-        );
-      });
-    </script>
-  </body>
-</html>
+  <div style="display: none">
+    <label for="lead_source">Lead Source</label
+    ><select id="lead_source" name="lead_source">
+      <option value="Contacto Web">Contacto Web</option>
+    </select>
+  </div>
+  <div class="flex-item">
+    <input type="submit" name="submit" class="myBtn" />
+  </div>
+</form>
+
+<script>
+  document.querySelector(".myForm").addEventListener("submit", function () {
+    //event.preventDefault(); // Prevenir el envío del formulario
+
+    alert(
+      `¡Gracias por completar el formulario! En breve una colaborador de nuestro equipo se estará comunicando via mail`
+    );
+  });
+</script>
