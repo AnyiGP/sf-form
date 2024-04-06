@@ -1,11 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+    <!--  If necessary, please modify the charset parameter to specify the        -->
+    <!--  character set of your HTML page.                                        -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tenor+Sans&display=swap"
+      rel="stylesheet"
+    />
     <title>sf-form</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <form
+      action=""
+      method="POST"
+      style="
+        background-color: #ffffff;
+        padding: 50px;
+        font-family: Roboto, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      "
+    >
+      <input type="hidden" name="oid" value="" />
+      <input type="hidden" name="retURL" value="https://www.page.rg/" />
+
+      <!--  ----------------------------------------------------------------------  -->
+      <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+      <!--  these lines if you wish to test in debug mode.                          -->
+      <!--  <input type="hidden" name="debug" value=1>                              -->
+      <!--  <input type="hidden" name="debugEmail"                                  -->
+      <!--  value="">                                    -->
+      <!--  ----------------------------------------------------------------------  -->
+      <label for="first_name">First Name</label
+      ><input
+        id="first_name"
+        maxlength="40"
+        name="first_name"
+        size="20"
+        type="text"
+        style="background-color: #efeff3"
+      /><br />
+      <label for="last_name">Last Name</label
+      ><input
+        id="last_name"
+        maxlength="80"
+        name="last_name"
+        size="20"
+        type="text"
+      /><br />
+
+      <label for="email">Email</label
+      ><input
+        id="email"
+        maxlength="80"
+        name="email"
+        size="20"
+        type="text"
+      /><br />
+
+      <label for="company">Company</label
+      ><input
+        id="company"
+        maxlength="40"
+        name="company"
+        size="20"
+        type="text"
+      /><br />
+
+      <label for="industry">Industry</label
+      ><select id="industry" name="industry">
+        <option value="">--None--</option>
+        <option value="ONG">ONG</option>
+        <option value="Empresa Social">Empresa Social</option>
+        <option value="Empresa">Empresa</option>
+        <option value="Gobierno">Gobierno</option>
+        <option value="Donante">Donante</option>
+        <option value="Fondo">Fondo</option></select
+      ><br />
+
+      Alcance:<select title="Alcance">
+        <option value="">--None--</option>
+        <option value="Local">Local</option>
+        <option value="Nacional">Nacional</option>
+        <option value="Regional/Internacional">
+          Regional/Internacional
+        </option></select
+      ><br />
+
+      N° de Empleados:<select title="N° de Empleados">
+        <option value="">--None--</option>
+        <option value="No sé">No sé</option>
+        <option value="Somos un equipo de voluntarios">
+          Somos un equipo de voluntarios
+        </option>
+        <option value="Menos de 10">Menos de 10</option>
+        <option value="Entre 10 y 25">Entre 10 y 25</option>
+        <option value="Entre 25 y 50">Entre 25 y 50</option>
+        <option value="Más de 50">Más de 50</option></select
+      ><br />
+
+      Foco en un solo objetivo:<select title="Foco en un solo objetivo">
+        <option value="">--None--</option>
+        <option value="Nunca">Nunca</option>
+        <option value="Raramente">Raramente</option>
+        <option value="A veces">A veces</option>
+        <option value="Siempre">Siempre</option></select
+      ><br />
+
+      Abiertos a cambios:<select title="Abiertos a cambios">
+        <option value="">--None--</option>
+        <option value="Nunca">Nunca</option>
+        <option value="Raramente">Raramente</option>
+        <option value="A veces">A veces</option>
+        <option value="Siempre">Siempre</option></select
+      ><br />
+
+      Medios de comunicación eficientes:<select
+        title="Medios de comunicación eficientes"
+      >
+        <option value="">--None--</option>
+        <option value="Nunca">Nunca</option>
+        <option value="Raramente">Raramente</option>
+        <option value="A veces">A veces</option>
+        <option value="Siempre">Siempre</option></select
+      ><br />
+
+      Consulta al publico satisfacer necesidad:<select
+        title="Consulta al publico satisfacer necesidad"
+      >
+        <option value="">--None--</option>
+        <option value="Nunca">Nunca</option>
+        <option value="Raramente">Raramente</option>
+        <option value="A veces">A veces</option>
+        <option value="Siempre">Siempre</option></select
+      ><br />
+
+      Confianza p/expresarse con libertad:<select
+        title="Confianza p/expresarse con libertad"
+      >
+        <option value="">--None--</option>
+        <option value="Nunca">Nunca</option>
+        <option value="Raramente">Raramente</option>
+        <option value="A veces">A veces</option>
+        <option value="Siempre">Siempre</option></select
+      ><br />
+
+      Propósito conocido guía acciones:<select
+        title="Propósito conocido guía acciones"
+      >
+        <option value="">--None--</option>
+        <option value="Nunca">Nunca</option>
+        <option value="Raramente">Raramente</option>
+        <option value="A veces">A veces</option>
+        <option value="Siempre">Siempre</option></select
+      ><br />
+
+      Estabilidad financiera:<select title="Estabilidad financiera">
+        <option value="">--None--</option>
+        <option value="Nunca">Nunca</option>
+        <option value="Raramente">Raramente</option>
+        <option value="A veces">A veces</option>
+        <option value="Siempre">Siempre</option></select
+      ><br />
+
+      <div style="display: none">
+        <label for="lead_source">Lead Source</label
+        ><select id="lead_source" name="lead_source">
+          <option value="Contacto Web">Contacto Web</option>
+        </select>
+      </div>
+      <input type="submit" name="submit" />
+    </form>
+  </body>
 </html>
