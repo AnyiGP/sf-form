@@ -501,5 +501,14 @@
         <input type="submit" name="submit" class="myBtn" />
       </div>
     </form>
+    <script>
+      document.querySelector(".myForm").addEventListener("submit", function () {
+        //event.preventDefault(); // Prevenir el envío del formulario
+
+        alert(
+          `¡Gracias por completar el formulario! En breve una colaborador de nuestro equipo se estará comunicando via mail`
+        );
+      });
+    </script>
   </body>
 </html>
